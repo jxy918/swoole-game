@@ -1,0 +1,482 @@
+MasterPid=6643
+[/root/swoole-src-1.9.19/swoole_server.c:415@php_swoole_server_before_start]Create swoole_server host=0.0.0.0, port=9502, mode=3, type=1
+[/root/swoole-src-1.9.19/src/network/Server.c:346@swServer_start_proxy]hb timer start, time: 30 live time:60
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=4
+ManagerPid=6662
+Server: start.Swoole version is [1.9.19]
+Task work_id is 1
+[/root/swoole-src-1.9.19/swoole_server.c:415@php_swoole_server_before_start]Create swoole_server host=0.0.0.0, port=9502, mode=3, type=1
+onWorkerStart:
+Task work_id is 2
+[/root/swoole-src-1.9.19/swoole_server.c:415@php_swoole_server_before_start]Create swoole_server host=0.0.0.0, port=9502, mode=3, type=1
+onWorkerStart:
+onManagerStart:
+[/root/swoole-src-1.9.19/swoole_server.c:415@php_swoole_server_before_start]Create swoole_server host=0.0.0.0, port=9502, mode=3, type=1
+Worker work_id is 0
+[/root/swoole-src-1.9.19/swoole_server.c:415@php_swoole_server_before_start]Create swoole_server host=0.0.0.0, port=9502, mode=3, type=1
+onWorkerStart:
+onOpen connection open: 1
+[/root/swoole-src-1.9.19/swoole_http_server.c:1030@http_onReceive]httpRequest 658 bytes:
+---------------------------------------
+GET / HTTP/1.1
+Host: 192.168.7.196:9502
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+Upgrade: websocket
+Origin: http://192.168.7.196
+Sec-WebSocket-Version: 13
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN,zh;q=0.8,en;q=0.6
+Cookie: LQs3_2132_ulastactivity=8670pvHhmiTFyAIu8Wyr0ov7zgH0LPnDuAnX5gUj10H2Zsfn7ZUo; LQs3_2132_nofavfid=1; LQs3_2132_smile=1D1; tp_sid=9fd2dd3e0681011b
+Sec-WebSocket-Key: VkiiG7z8GssdrTravdizQA==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+
+
+
+[/root/swoole-src-1.9.19/swoole_websocket_server.c:207@websocket_handshake]websocket header len:189
+HTTP/1.1 101 Switching Protocols
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Accept: XZ1UnDlcHcfRfXnOLTrnLF16vKw=
+Sec-WebSocket-Version: 13
+Server: swoole-websocket-server
+
+ 
+
+[/root/swoole-src-1.9.19/src/factory/FactoryProcess.c:272@swFactoryProcess_finish][Worker] send: sendn=201|type=0|content=HTTP/1.1 101 Switching Protocols
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Accept: XZ1UnDlcHcfRfXnOLTrnLF16vKw=
+Sec-WebSocket-Version: 13
+Server: swoole-websocket-server
+
+
+onOpen connection open: 2
+[/root/swoole-src-1.9.19/swoole_http_server.c:1030@http_onReceive]httpRequest 658 bytes:
+---------------------------------------
+GET / HTTP/1.1
+Host: 192.168.7.196:9502
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+Upgrade: websocket
+Origin: http://192.168.7.196
+Sec-WebSocket-Version: 13
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN,zh;q=0.8,en;q=0.6
+Cookie: LQs3_2132_ulastactivity=8670pvHhmiTFyAIu8Wyr0ov7zgH0LPnDuAnX5gUj10H2Zsfn7ZUo; LQs3_2132_nofavfid=1; LQs3_2132_smile=1D1; tp_sid=9fd2dd3e0681011b
+Sec-WebSocket-Key: tV6UICZ4KhzusAh/0Pgj5Q==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+
+
+
+[/root/swoole-src-1.9.19/swoole_websocket_server.c:207@websocket_handshake]websocket header len:189
+HTTP/1.1 101 Switching Protocols
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Accept: jBTM2/mFR4XdnCq9jNDQr4CBrbo=
+Sec-WebSocket-Version: 13
+Server: swoole-websocket-server
+
+ 
+
+[/root/swoole-src-1.9.19/src/factory/FactoryProcess.c:272@swFactoryProcess_finish][Worker] send: sendn=201|type=0|content=HTTP/1.1 101 Switching Protocols
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Accept: jBTM2/mFR4XdnCq9jNDQr4CBrbo=
+Sec-WebSocket-Version: 13
+Server: swoole-websocket-server
+
+
+2018-01-04 17:59:40  DEBUG  Recv <<<  cmd=1  scmd=13  len=21  data={"time":1515059982118}
+2018-01-04 17:59:40  DEBUG  Recv <<<  cmd=1  scmd=13  len=21  data={"time":1515059982103}
+Error:Game\Lib\ is not support 
+get strategy fail
+onTask: task_id=1	woker_id=0
+Error:Game\Lib\ is not support 
+get strategy fail
+onTask: task_id=0	woker_id=0
+onOpen connection open: 3
+[/root/swoole-src-1.9.19/swoole_http_server.c:1030@http_onReceive]httpRequest 658 bytes:
+---------------------------------------
+GET / HTTP/1.1
+Host: 192.168.7.196:9502
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+Upgrade: websocket
+Origin: http://192.168.7.196
+Sec-WebSocket-Version: 13
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN,zh;q=0.8,en;q=0.6
+Cookie: LQs3_2132_ulastactivity=8670pvHhmiTFyAIu8Wyr0ov7zgH0LPnDuAnX5gUj10H2Zsfn7ZUo; LQs3_2132_nofavfid=1; LQs3_2132_smile=1D1; tp_sid=9fd2dd3e0681011b
+Sec-WebSocket-Key: ZUr21/uIHI5xIKrvca0IJQ==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+
+
+
+[/root/swoole-src-1.9.19/swoole_websocket_server.c:207@websocket_handshake]websocket header len:189
+HTTP/1.1 101 Switching Protocols
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Accept: 5lpwq68m3Xe+gnf0b7xh3WDO+SM=
+Sec-WebSocket-Version: 13
+Server: swoole-websocket-server
+
+ 
+
+[/root/swoole-src-1.9.19/src/factory/FactoryProcess.c:272@swFactoryProcess_finish][Worker] send: sendn=201|type=0|content=HTTP/1.1 101 Switching Protocols
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Accept: 5lpwq68m3Xe+gnf0b7xh3WDO+SM=
+Sec-WebSocket-Version: 13
+Server: swoole-websocket-server
+
+
+2018-01-04 17:59:48  DEBUG  Recv <<<  cmd=1  scmd=1  len=7  data={}
+onTask: task_id=2	woker_id=0
+2018-01-04 17:59:54  DEBUG  Recv <<<  cmd=1  scmd=3  len=12  data={"bet":100}
+onTask: task_id=3	woker_id=0
+2018-01-04 17:59:57  DEBUG  Recv <<<  cmd=1  scmd=5  len=19  data={"card":[33],"bet":100}
+onTask: task_id=4	woker_id=0
+2018-01-04 18:00:00  DEBUG  Recv <<<  cmd=1  scmd=1  len=7  data={}
+onTask: task_id=5	woker_id=0
+2018-01-04 18:00:03  DEBUG  Recv <<<  cmd=1  scmd=3  len=12  data={"bet":100}
+onTask: task_id=6	woker_id=0
+2018-01-04 18:00:06  DEBUG  Recv <<<  cmd=1  scmd=5  len=20  data={"card":[33,49],"bet":100}
+onTask: task_id=7	woker_id=0
+2018-01-04 18:00:13  DEBUG  Recv <<<  cmd=1  scmd=11  len=7  data={}
+onTask: task_id=8	woker_id=0
+2018-01-04 18:00:15  DEBUG  Recv <<<  cmd=1  scmd=9  len=34  data={"card":58,"pos":1,"bean":499999800,"bet":200}
+onTask: task_id=9	woker_id=0
+2018-01-04 18:00:17  DEBUG  Recv <<<  cmd=1  scmd=13  len=21  data={"time":1515060018847}
+Error:Game\Lib\ is not support 
+get strategy fail
+onTask: task_id=10	woker_id=0
+2018-01-04 18:00:18  DEBUG  Recv <<<  cmd=1  scmd=1  len=7  data={}
+onTask: task_id=11	woker_id=0
+2018-01-04 18:00:22  DEBUG  Recv <<<  cmd=1  scmd=3  len=12  data={"bet":100}
+onTask: task_id=12	woker_id=0
+2018-01-04 18:00:27  DEBUG  Recv <<<  cmd=1  scmd=5  len=20  data={"card":[33,56],"bet":100}
+onTask: task_id=13	woker_id=0
+2018-01-04 18:00:40  DEBUG  Recv <<<  cmd=1  scmd=11  len=7  data={}
+onTask: task_id=14	woker_id=0
+2018-01-04 18:00:42  DEBUG  Recv <<<  cmd=1  scmd=9  len=33  data={"card":61,"pos":1,"bean":499999700,"bet":100}
+onTask: task_id=15	woker_id=0
+2018-01-04 18:00:45  DEBUG  Recv <<<  cmd=1  scmd=7  len=13  data={"bet":200}
+onTask: task_id=16	woker_id=0
+2018-01-04 18:00:45  DEBUG  Recv <<<  cmd=1  scmd=1  len=7  data={}
+onTask: task_id=17	woker_id=0
+2018-01-04 18:00:47  DEBUG  Recv <<<  cmd=1  scmd=13  len=21  data={"time":1515060048848}
+Error:Game\Lib\ is not support 
+get strategy fail
+onTask: task_id=18	woker_id=0
+2018-01-04 18:00:47  DEBUG  Recv <<<  cmd=1  scmd=3  len=12  data={"bet":100}
+onTask: task_id=19	woker_id=0
+2018-01-04 18:00:52  DEBUG  Recv <<<  cmd=1  scmd=5  len=21  data={"card":[25,57,61],"bet":100}
+onTask: task_id=20	woker_id=0
+2018-01-04 18:00:54  DEBUG  Recv <<<  cmd=1  scmd=1  len=7  data={}
+onTask: task_id=21	woker_id=0
+onOpen connection open: 4
+[/root/swoole-src-1.9.19/src/factory/FactoryProcess.c:272@swFactoryProcess_finish][Worker] send: sendn=45|type=0|content=‚
+[/root/swoole-src-1.9.19/src/factory/FactoryProcess.c:272@swFactoryProcess_finish][Worker] send: sendn=45|type=0|content=‚
+[/root/swoole-src-1.9.19/src/factory/FactoryProcess.c:272@swFactoryProcess_finish][Worker] send: sendn=93|type=0|content=‚O
+[/root/swoole-src-1.9.19/src/factory/FactoryProcess.c:272@swFactoryProcess_finish][Worker] send: sendn=45|type=0|content=‚
+[/root/swoole-src-1.9.19/src/factory/FactoryProcess.c:272@swFactoryProcess_finish][Worker] send: sendn=45|type=0|content=‚
+[/root/swoole-src-1.9.19/src/factory/FactoryProcess.c:272@swFactoryProcess_finish][Worker] send: sendn=93|type=0|content=‚O
+[/root/swoole-src-1.9.19/src/factory/FactoryProcess.c:272@swFactoryProcess_finish][Worker] send: sendn=47|type=0|content=‚!
+[/root/swoole-src-1.9.19/src/factory/FactoryProcess.c:272@swFactoryProcess_finish][Worker] send: sendn=167|type=0|content=‚~
+[/root/swoole-src-1.9.19/src/factory/FactoryProcess.c:272@swFactoryProcess_finish][Worker] send: sendn=45|type=0|content=‚
+[/root/swoole-src-1.9.19/src/factory/FactoryProcess.c:272@swFactoryProcess_finish][Worker] send: sendn=45|type=0|content=‚
+[/root/swoole-src-1.9.19/src/factory/FactoryProcess.c:272@swFactoryProcess_finish][Worker] send: sendn=102|type=0|content=‚X
+[/root/swoole-src-1.9.19/src/factory/FactoryProcess.c:272@swFactoryProcess_finish][Worker] send: sendn=47|type=0|content=‚!
+[/root/swoole-src-1.9.19/src/factory/FactoryProcess.c:272@swFactoryProcess_finish][Worker] send: sendn=156|type=0|content=‚~
+[/root/swoole-src-1.9.19/src/factory/FactoryProcess.c:272@swFactoryProcess_finish][Worker] send: sendn=46|type=0|content=‚ 
+[/root/swoole-src-1.9.19/src/factory/FactoryProcess.c:272@swFactoryProcess_finish][Worker] send: sendn=45|type=0|content=‚
+[/root/swoole-src-1.9.19/src/factory/FactoryProcess.c:272@swFactoryProcess_finish][Worker] send: sendn=45|type=0|content=‚
+[/root/swoole-src-1.9.19/src/factory/FactoryProcess.c:272@swFactoryProcess_finish][Worker] send: sendn=93|type=0|content=‚O
+[/root/swoole-src-1.9.19/src/factory/FactoryProcess.c:272@swFactoryProcess_finish][Worker] send: sendn=45|type=0|content=‚
+[/root/swoole-src-1.9.19/swoole_http_server.c:1030@http_onReceive]httpRequest 658 bytes:
+---------------------------------------
+GET / HTTP/1.1
+Host: 192.168.7.196:9502
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+Upgrade: websocket
+Origin: http://192.168.7.196
+Sec-WebSocket-Version: 13
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN,zh;q=0.8,en;q=0.6
+Cookie: LQs3_2132_ulastactivity=8670pvHhmiTFyAIu8Wyr0ov7zgH0LPnDuAnX5gUj10H2Zsfn7ZUo; LQs3_2132_nofavfid=1; LQs3_2132_smile=1D1; tp_sid=9fd2dd3e0681011b
+Sec-WebSocket-Key: rRHi74o8LjQ56wWZDut5Yg==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+
+
+
+[/root/swoole-src-1.9.19/swoole_websocket_server.c:207@websocket_handshake]websocket header len:189
+HTTP/1.1 101 Switching Protocols
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Accept: xZ/3sqko5I0nUZewbN7o9Y0tiSI=
+Sec-WebSocket-Version: 13
+Server: swoole-websocket-server
+
+ 
+
+[/root/swoole-src-1.9.19/src/factory/FactoryProcess.c:272@swFactoryProcess_finish][Worker] send: sendn=201|type=0|content=HTTP/1.1 101 Switching Protocols
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Accept: xZ/3sqko5I0nUZewbN7o9Y0tiSI=
+Sec-WebSocket-Version: 13
+Server: swoole-websocket-server
+
+
+2018-01-04 18:01:00  DEBUG  Recv <<<  cmd=1  scmd=1  len=7  data={}
+onTask: task_id=22	woker_id=0
+2018-01-04 18:01:29  DEBUG  Recv <<<  cmd=1  scmd=13  len=21  data={"time":1515060090861}
+Error:Game\Lib\ is not support 
+get strategy fail
+onTask: task_id=23	woker_id=0
+[/root/swoole-src-1.9.19/src/network/Server.c:148@swServer_master_onAccept][Master] Accept new connection. maxfd=4|reactor_id=1|conn=18
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1351@swReactorThread_dispatch]send string package, size=658 bytes.
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1409@swReactorThread_dispatch]dispatch, type=10|len=658
+
+[/root/swoole-src-1.9.19/src/network/Server.c:148@swServer_master_onAccept][Master] Accept new connection. maxfd=18|reactor_id=1|conn=19
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1351@swReactorThread_dispatch]send string package, size=658 bytes.
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1409@swReactorThread_dispatch]dispatch, type=10|len=658
+
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=4
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=5
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=6
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=7
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=8
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=9
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=10
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=11
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=12
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=13
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=14
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=15
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=16
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=17
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=18
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=19
+[/root/swoole-src-1.9.19/src/protocol/WebSocket.c:90@swWebSocket_get_package_length]header_length=6, payload_length=21
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1351@swReactorThread_dispatch]send string package, size=23 bytes.
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1409@swReactorThread_dispatch]dispatch, type=10|len=23
+
+[/root/swoole-src-1.9.19/src/protocol/WebSocket.c:90@swWebSocket_get_package_length]header_length=6, payload_length=21
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1351@swReactorThread_dispatch]send string package, size=23 bytes.
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1409@swReactorThread_dispatch]dispatch, type=10|len=23
+
+[/root/swoole-src-1.9.19/src/protocol/WebSocket.c:90@swWebSocket_get_package_length]header_length=6, payload_length=2
+[/root/swoole-src-1.9.19/src/network/Port.c:286@swPort_onRead_check_length]Close Event.FD=18|From=0
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:311@swReactorThread_close]Close Event.fd=18|from=0
+[/root/swoole-src-1.9.19/src/protocol/WebSocket.c:90@swWebSocket_get_package_length]header_length=6, payload_length=2
+[/root/swoole-src-1.9.19/src/network/Port.c:286@swPort_onRead_check_length]Close Event.FD=19|From=0
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:311@swReactorThread_close]Close Event.fd=19|from=0
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:366@swReactorThread_close]set_maxfd=18|close_fd=19
+
+[/root/swoole-src-1.9.19/src/network/Server.c:148@swServer_master_onAccept][Master] Accept new connection. maxfd=4|reactor_id=1|conn=18
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1351@swReactorThread_dispatch]send string package, size=658 bytes.
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1409@swReactorThread_dispatch]dispatch, type=10|len=658
+
+[/root/swoole-src-1.9.19/src/protocol/WebSocket.c:90@swWebSocket_get_package_length]header_length=6, payload_length=7
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1351@swReactorThread_dispatch]send string package, size=9 bytes.
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1409@swReactorThread_dispatch]dispatch, type=10|len=9
+
+[/root/swoole-src-1.9.19/src/protocol/WebSocket.c:90@swWebSocket_get_package_length]header_length=6, payload_length=12
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1351@swReactorThread_dispatch]send string package, size=14 bytes.
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1409@swReactorThread_dispatch]dispatch, type=10|len=14
+
+[/root/swoole-src-1.9.19/src/protocol/WebSocket.c:90@swWebSocket_get_package_length]header_length=6, payload_length=19
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1351@swReactorThread_dispatch]send string package, size=21 bytes.
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1409@swReactorThread_dispatch]dispatch, type=10|len=21
+
+[/root/swoole-src-1.9.19/src/protocol/WebSocket.c:90@swWebSocket_get_package_length]header_length=6, payload_length=7
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1351@swReactorThread_dispatch]send string package, size=9 bytes.
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1409@swReactorThread_dispatch]dispatch, type=10|len=9
+
+[/root/swoole-src-1.9.19/src/protocol/WebSocket.c:90@swWebSocket_get_package_length]header_length=6, payload_length=12
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1351@swReactorThread_dispatch]send string package, size=14 bytes.
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1409@swReactorThread_dispatch]dispatch, type=10|len=14
+
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=4
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=5
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=6
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=7
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=8
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=9
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=10
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=11
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=12
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=13
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=14
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=15
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=16
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=17
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=18
+[/root/swoole-src-1.9.19/src/protocol/WebSocket.c:90@swWebSocket_get_package_length]header_length=6, payload_length=20
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1351@swReactorThread_dispatch]send string package, size=22 bytes.
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1409@swReactorThread_dispatch]dispatch, type=10|len=22
+
+[/root/swoole-src-1.9.19/src/protocol/WebSocket.c:90@swWebSocket_get_package_length]header_length=6, payload_length=7
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1351@swReactorThread_dispatch]send string package, size=9 bytes.
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1409@swReactorThread_dispatch]dispatch, type=10|len=9
+
+[/root/swoole-src-1.9.19/src/protocol/WebSocket.c:90@swWebSocket_get_package_length]header_length=6, payload_length=34
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1351@swReactorThread_dispatch]send string package, size=36 bytes.
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1409@swReactorThread_dispatch]dispatch, type=10|len=36
+
+[/root/swoole-src-1.9.19/src/protocol/WebSocket.c:90@swWebSocket_get_package_length]header_length=6, payload_length=21
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1351@swReactorThread_dispatch]send string package, size=23 bytes.
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1409@swReactorThread_dispatch]dispatch, type=10|len=23
+
+[/root/swoole-src-1.9.19/src/protocol/WebSocket.c:90@swWebSocket_get_package_length]header_length=6, payload_length=7
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1351@swReactorThread_dispatch]send string package, size=9 bytes.
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1409@swReactorThread_dispatch]dispatch, type=10|len=9
+
+[/root/swoole-src-1.9.19/src/protocol/WebSocket.c:90@swWebSocket_get_package_length]header_length=6, payload_length=12
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1351@swReactorThread_dispatch]send string package, size=14 bytes.
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1409@swReactorThread_dispatch]dispatch, type=10|len=14
+
+[/root/swoole-src-1.9.19/src/protocol/WebSocket.c:90@swWebSocket_get_package_length]header_length=6, payload_length=20
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1351@swReactorThread_dispatch]send string package, size=22 bytes.
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1409@swReactorThread_dispatch]dispatch, type=10|len=22
+
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=4
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=5
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=6
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=7
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=8
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=9
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=10
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=11
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=12
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=13
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=14
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=15
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=16
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=17
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=18
+[/root/swoole-src-1.9.19/src/protocol/WebSocket.c:90@swWebSocket_get_package_length]header_length=6, payload_length=7
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1351@swReactorThread_dispatch]send string package, size=9 bytes.
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1409@swReactorThread_dispatch]dispatch, type=10|len=9
+
+[/root/swoole-src-1.9.19/src/protocol/WebSocket.c:90@swWebSocket_get_package_length]header_length=6, payload_length=33
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1351@swReactorThread_dispatch]send string package, size=35 bytes.
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1409@swReactorThread_dispatch]dispatch, type=10|len=35
+
+[/root/swoole-src-1.9.19/src/protocol/WebSocket.c:90@swWebSocket_get_package_length]header_length=6, payload_length=13
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1351@swReactorThread_dispatch]send string package, size=15 bytes.
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1409@swReactorThread_dispatch]dispatch, type=10|len=15
+
+[/root/swoole-src-1.9.19/src/protocol/WebSocket.c:90@swWebSocket_get_package_length]header_length=6, payload_length=7
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1351@swReactorThread_dispatch]send string package, size=9 bytes.
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1409@swReactorThread_dispatch]dispatch, type=10|len=9
+
+[/root/swoole-src-1.9.19/src/protocol/WebSocket.c:90@swWebSocket_get_package_length]header_length=6, payload_length=21
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1351@swReactorThread_dispatch]send string package, size=23 bytes.
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1409@swReactorThread_dispatch]dispatch, type=10|len=23
+
+[/root/swoole-src-1.9.19/src/protocol/WebSocket.c:90@swWebSocket_get_package_length]header_length=6, payload_length=12
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1351@swReactorThread_dispatch]send string package, size=14 bytes.
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1409@swReactorThread_dispatch]dispatch, type=10|len=14
+
+[/root/swoole-src-1.9.19/src/protocol/WebSocket.c:90@swWebSocket_get_package_length]header_length=6, payload_length=21
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1351@swReactorThread_dispatch]send string package, size=23 bytes.
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1409@swReactorThread_dispatch]dispatch, type=10|len=23
+
+[/root/swoole-src-1.9.19/src/protocol/WebSocket.c:90@swWebSocket_get_package_length]header_length=6, payload_length=7
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1351@swReactorThread_dispatch]send string package, size=9 bytes.
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1409@swReactorThread_dispatch]dispatch, type=10|len=9
+
+[/root/swoole-src-1.9.19/src/protocol/WebSocket.c:90@swWebSocket_get_package_length]header_length=6, payload_length=2
+[/root/swoole-src-1.9.19/src/network/Port.c:286@swPort_onRead_check_length]Close Event.FD=18|From=0
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:311@swReactorThread_close]Close Event.fd=18|from=0
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:366@swReactorThread_close]set_maxfd=17|close_fd=18
+
+[/root/swoole-src-1.9.19/src/network/Server.c:148@swServer_master_onAccept][Master] Accept new connection. maxfd=4|reactor_id=1|conn=18
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1351@swReactorThread_dispatch]send string package, size=658 bytes.
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1409@swReactorThread_dispatch]dispatch, type=10|len=658
+
+[/root/swoole-src-1.9.19/src/protocol/WebSocket.c:90@swWebSocket_get_package_length]header_length=6, payload_length=7
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1351@swReactorThread_dispatch]send string package, size=9 bytes.
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1409@swReactorThread_dispatch]dispatch, type=10|len=9
+
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=4
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=5
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=6
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=7
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=8
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=9
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=10
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=11
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=12
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=13
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=14
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=15
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=16
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=17
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=18
+[/root/swoole-src-1.9.19/src/protocol/WebSocket.c:90@swWebSocket_get_package_length]header_length=6, payload_length=21
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1351@swReactorThread_dispatch]send string package, size=23 bytes.
+[/root/swoole-src-1.9.19/src/network/ReactorThread.c:1409@swReactorThread_dispatch]dispatch, type=10|len=23
+
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=4
+[/root/swoole-src-1.9.19/src/network/Server.c:1508@swHeartbeatThread_loop]check fd=5
+[/root/swoole-src-1.9.19/src/network/Server.c:12018-01-04 18:01:59  DEBUG  Recv <<<  cmd=1  scmd=13  len=21  data={"time":1515060120912}
+Error:Game\Lib\ is not support 
+get strategy fail
+onTask: task_id=24	woker_id=0
+2018-01-04 18:02:29  DEBUG  Recv <<<  cmd=1  scmd=13  len=21  data={"time":1515060150912}
+Error:Game\Lib\ is not support 
+get strategy fail
+onTask: task_id=25	woker_id=0
+onOpen connection open: 5
+[/root/swoole-src-1.9.19/src/factory/FactoryProcess.c:272@swFactoryProcess_finish][Worker] send: sendn=45|type=0|content=‚
+[/root/swoole-src-1.9.19/swoole_http_server.c:1030@http_onReceive]httpRequest 658 bytes:
+---------------------------------------
+GET / HTTP/1.1
+Host: 192.168.7.196:9502
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+Upgrade: websocket
+Origin: http://192.168.7.196
+Sec-WebSocket-Version: 13
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN,zh;q=0.8,en;q=0.6
+Cookie: LQs3_2132_ulastactivity=8670pvHhmiTFyAIu8Wyr0ov7zgH0LPnDuAnX5gUj10H2Zsfn7ZUo; LQs3_2132_nofavfid=1; LQs3_2132_smile=1D1; tp_sid=9fd2dd3e0681011b
+Sec-WebSocket-Key: wLXCVNCb5A9kKyHCd+vGrw==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+
+
+
+[/root/swoole-src-1.9.19/swoole_websocket_server.c:207@websocket_handshake]websocket header len:189
+HTTP/1.1 101 Switching Protocols
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Accept: OVxcpIYDTFnXCKFKCIFNQ6LsnTI=
+Sec-WebSocket-Version: 13
+Server: swoole-websocket-server
+
+ 
+
+[/root/swoole-src-1.9.19/src/factory/FactoryProcess.c:272@swFactoryProcess_finish][Worker] send: sendn=201|type=0|content=HTTP/1.1 101 Switching Protocols
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Accept: OVxcpIYDTFnXCKFKCIFNQ6LsnTI=
+Sec-WebSocket-Version: 13
+Server: swoole-websocket-server
+
+
+2018-01-04 18:02:49  DEBUG  Recv <<<  cmd=1  scmd=1  len=7  data={}
+onTask: task_id=26	woker_id=0
