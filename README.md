@@ -33,8 +33,7 @@
    
 ## 四，环境依赖，需要支持高版本swoole， 需要修改一下代码
     
-* php 5.6 
-* 
+* php 5.6  
 * php扩展：
 * swoole 1.9
 * msgpack
