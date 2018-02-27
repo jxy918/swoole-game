@@ -26,7 +26,7 @@ class PdoDB extends \PDO {
      */
     function connect()
     {
-        $db_config = &$this->config;
+        $db_config = $this->config;
         $dsn = $db_config['dbms'] . ":host=" . $db_config['host'] . ";dbname=" . $db_config['name'];
 
         if (!empty($db_config['persistent']))
@@ -170,7 +170,7 @@ class PdoDB extends \PDO {
 	 */
 	function close()
 	{
-		unset($this);
+		//$this = null;
 	}
 
     function  quote1($str)
