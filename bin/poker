@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 function startgame()
 {
 	printf "staring GameServer...\r\n"
-    /usr/bin/php run.php >> ../log/server.log 2>&1
+    /usr/local/bin/php run.php >> ../log/server.log 2>&1
 	printf $?
     if [ $? == 0 ]; then
         printf "GameServer start OK\r\n"

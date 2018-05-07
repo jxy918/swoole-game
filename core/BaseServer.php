@@ -68,7 +68,7 @@ abstract class BaseServer {
 		'max_request' => 0, //必须设置为0，否则会导致并发任务超时,don't change this number
 		'task_max_request' => 2000,
 		
-		'daemonize'=>1, 
+//		'daemonize'=>1, 
 //		'log_level' => 2, //swoole 日志级别 Info
 		'backlog' => 3000,
 		'log_file' => '../log/sw_server.log',//swoole 系统日志，任何代码内echo都会在这里输出
@@ -117,7 +117,7 @@ abstract class BaseServer {
 		//如果tcp端口有设置， 将开启tcp协议
 		if(!empty($this->tcpserver_port)) {			
 			//tcp server
-			$this->tcpserver = $this->server->addListener($this->server_ip, $this->tcpserver_port, SWOOLE_SOCK_TCP);
+			$this->tcpserver = $this->server->listen($this->server_ip, $this->tcpserver_port, SWOOLE_SOCK_TCP);
 			//tcp只使用这几个个事件
 			$this->tcpserver->on('Connect', array($this, 'onConnect'));
 			$this->tcpserver->on('Receive', array($this, 'onReceive'));
