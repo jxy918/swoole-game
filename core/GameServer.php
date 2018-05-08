@@ -72,7 +72,6 @@ class GameServer extends BaseServer {
 			return 'http protocol';
 		}			
 	}
-<<<<<<< HEAD
 	
 	public function initDB() {		
 		//初始化db
@@ -87,6 +86,3 @@ class GameServer extends BaseServer {
 		$this->redis->connect($redis_conf['host'], $redis_conf['port']);	
 	}
 }
-=======
-}
->>>>>>> 9e809254aa5906608fe3c7e567346c598e77568a
