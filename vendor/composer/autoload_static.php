@@ -11,6 +11,7 @@ class ComposerStaticInita20b55251dd266fbe01ce00292b5839f
         array (
             'Game\\Lib\\' => 9,
             'Game\\Core\\' => 10,
+            'Game\\App\\' => 9,
         ),
     );
 
@@ -22,6 +23,10 @@ class ComposerStaticInita20b55251dd266fbe01ce00292b5839f
         'Game\\Core\\' => 
         array (
             0 => __DIR__ . '/../..' . '/core',
+        ),
+        'Game\\App\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app',
         ),
     );
 

@@ -8,4 +8,5 @@ $baseDir = dirname($vendorDir);
 return array(
     'Game\\Lib\\' => array($baseDir . '/lib'),
     'Game\\Core\\' => array($baseDir . '/core'),
+    'Game\\App\\' => array($baseDir . '/app'),
 );

@@ -1,6 +1,8 @@
 <?php
 namespace Game\Core;
 
+use Game\Lib\Route;
+
 /**
  * 调度运行游戏逻辑策略
  */ 
@@ -28,7 +30,7 @@ class Dispatch {
 		$route = Route::$map;
 		//获取策略类名
 		$classname = isset($route[$this->_params['cmd']][$this->_params['scmd']]) ? $route[$this->_params['cmd']][$this->_params['scmd']] : '';
-		$classname = 'Game\Lib\\'.$classname;
+		$classname = 'Game\App\\'.$classname;
 		if (class_exists($classname)) {
 			$this->_strategy = new $classname($this->_params);
 		} else {

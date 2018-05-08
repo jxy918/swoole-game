@@ -1,6 +1,8 @@
 <?php
 namespace Game\Core;
 
+use Game\Lib\Config;
+
 /**
  * websocket服务器
  */ 
@@ -30,13 +32,8 @@ class GameServer extends BaseServer {
 	 * 附件服务器初始化，例如：such as swoole atomic table or buffer 可以放置swoole的计数器，table等
 	*/
 	protected function init($serv){
-		$conf = include __DIR__."/Config.php";		
-		//初始化db
-		$this->db = new PdoDB($conf['db']);
-		$this->db->connect();
-		//初始化redis
-		$this->redis = new \Redis();
-		$this->redis->connect($conf['redis']['host'], $conf['redis']['port']);		
+		$this->initDB();
+		$this->initRedis();	
 	}
 	
 	/**
@@ -44,10 +41,11 @@ class GameServer extends BaseServer {
 	 * 比如需要动态加载的东西，可以做到无缝重启逻辑
 	*/
 	protected function initReload($server, $worker_id) {
-		require_once __DIR__."/Dispatch.php";
-		require_once __DIR__."/Const.php";
-		require_once __DIR__."/AStrategy.php";
-		require_once __DIR__."/JokerPoker.php";		
+		//require_once __DIR__."/../lib/Const.php";
+		//require_once __DIR__."/Dispatch.php";
+
+		//require_once __DIR__."/AStrategy.php";
+		//require_once __DIR__."/JokerPoker.php";		
 	}
 	
 	public function doWork($serv, $task_id, $src_worker_id, $data) {		
@@ -73,5 +71,18 @@ class GameServer extends BaseServer {
 		} else {
 			return 'http protocol';
 		}			
+	}
+	
+	public function initDB() {		
+		//初始化db
+		$this->db = new PdoDB(Config::getDbConf());
+		$this->db->connect();
+	}
+	
+	public function initRedis() {
+		//初始化redis
+		$redis_conf = Config::getRedisConf();
+		$this->redis = new \Redis();
+		$this->redis->connect($redis_conf['host'], $redis_conf['port']);	
 	}
 }

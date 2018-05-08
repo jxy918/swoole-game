@@ -20,7 +20,8 @@
     "autoload": {
         "psr-4": {
             "Game\\Core\\": "core",
-            "Game\\Lib\\": "lib"
+            "Game\\Lib\\": "lib",
+	    "Game\\App\\": "app"
         }
     }
 }

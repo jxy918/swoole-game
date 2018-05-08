@@ -2,7 +2,7 @@
 namespace Game\Core;
 
 /**
- * 服务器基类，主服务器为websocket，同时提供tcp协议接口
+ * 服务器基类，主服务器为websocket，同时可以监听tcp和http服务器
  *
  */  
 abstract class BaseServer {
@@ -37,6 +37,11 @@ abstract class BaseServer {
 	protected $tcpserver_port = 0;
 	
 	/**
+	 * http服务器端口，此端口子类继承有赋值， 将会监听tcp端口
+	 */         
+	protected $httpserver_port = 0;
+	
+	/**
 	 * 服务器进程名的前缀
 	 */
 	protected $process_name_prefix = 'game';
@@ -68,7 +73,7 @@ abstract class BaseServer {
 		'max_request' => 0, //必须设置为0，否则会导致并发任务超时,don't change this number
 		'task_max_request' => 2000,
 		
-		'daemonize'=>1, 
+//		'daemonize'=>1, 
 //		'log_level' => 2, //swoole 日志级别 Info
 		'backlog' => 3000,
 		'log_file' => '../log/sw_server.log',//swoole 系统日志，任何代码内echo都会在这里输出
@@ -112,15 +117,25 @@ abstract class BaseServer {
 	 * 初始化服务器
 	 */              
 	public function initServer() {
+		
 		//开启websocket服务器
 		$this->server = new \Swoole\Websocket\Server($this->server_ip, $this->server_port);	
+				
 		//如果tcp端口有设置， 将开启tcp协议
 		if(!empty($this->tcpserver_port)) {			
 			//tcp server
-			$this->tcpserver = $this->server->addListener($this->server_ip, $this->tcpserver_port, SWOOLE_SOCK_TCP);
+			$this->tcpserver = $this->server->listen($this->server_ip, $this->tcpserver_port, SWOOLE_SOCK_TCP);
 			//tcp只使用这几个个事件
 			$this->tcpserver->on('Connect', array($this, 'onConnect'));
 			$this->tcpserver->on('Receive', array($this, 'onReceive'));
+		}
+		
+		//如果http端口有设置， 将开启http协议
+		if(!empty($this->httpserver_port)) {			
+			//tcp server
+			$this->tcpserver = $this->server->listen($this->server_ip, $this->httpserver_port, SWOOLE_SOCK_TCP);
+			//http服务器只使用这个事件
+			$this->server->on('Request', array($this, 'onRequest'));
 		}
 		
 		//init websocket server
@@ -129,10 +144,7 @@ abstract class BaseServer {
 		$this->server->on('ManagerStop', array($this, 'onManagerStop'));
 		//websocket服务器
 		$this->server->on('Open', array($this, 'onOpen'));
-		$this->server->on('Message', array($this, 'onMessage'));
-		//http服务器
-		$this->server->on('Request', array($this, 'onRequest'));
-		
+		$this->server->on('Message', array($this, 'onMessage'));		
 		$this->server->on('WorkerStart', array($this, 'onWorkerStart'));
 		$this->server->on('WorkerError', array($this, 'onWorkerError'));
 		$this->server->on('Task', array($this, 'onTask'));
