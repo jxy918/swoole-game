@@ -77,3 +77,12 @@ php run.php
 ## 六，联系方式
 
 * qq：251413215
+
+## 七，备注
+
+* 根目录增加docker运行环境， 可以直接直接执行下面的命令，创建镜像php_swoole 
+
+```
+docker build -t php_swoole .
+```
+
