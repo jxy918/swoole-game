@@ -80,7 +80,7 @@ php run.php
 
 ## 七，备注
 
-* 根目录增加docker运行环境， 可以直接直接执行下面的命令，创建镜像php_swoole 
+* 根目录增加docker运行环境， 可以直接直接执行下面的命令，创建镜像php_swoole,环境增加php-protobuf支持 
 
 ```
 docker build -t php_swoole .
