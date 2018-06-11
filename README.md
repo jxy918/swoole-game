@@ -71,6 +71,22 @@
 php run.php
 
 ``` 
+
+如果开启http服务器，其实websocket和http是同时开启的， 如果不想混在一起可以单独开启监听端口，http测试例子代码如下浏览器访问：
+
+```
+http://192.168.7.197:9503/HttpTest?aaa=bbb&ccc=ddd
+
+```
+
+如果开启了tcp服务器，测试例子在client目录下， 注意例子采用了protobuf，请安装，也可以改成msgpack，请自行修改
+php执行一下就可以看到结果：
+
+```
+php tcp_client.php
+
+```
+
    
 
 * 3 ，H5游戏客户端代码由于公司限制，暂不开放， 但是提供了一个客户端交互测试工具，直接把client目录放入web服务器， 修改客服端配置文件配置websocket链接就能运行。
