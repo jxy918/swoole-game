@@ -1,12 +1,14 @@
 {
     "name": "jxy918/swoole-game",
+    "type": "library",
     "description": "基于swoole的H5游戏服务器开发框架",
     "keywords": ["swoole", "game", "html5"],
     "homepage": "https://github.com/jxy918/swoole-game",
     "require": {
         "php": ">=5.6",
         "ext-swoole": ">=1.9.0",
-	"ext-msgpack": "*"
+	"ext-msgpack": "*",
+	"ext-protobuf": "*"
     },
     "config": {
         "bin-dir": "bin"
@@ -21,7 +23,8 @@
         "psr-4": {
             "Game\\Core\\": "core",
             "Game\\Lib\\": "lib",
-	    "Game\\App\\": "app"
+	    "Game\\Conf\\": "conf",
+	    "Game\\App\\": "app"	   
         }
     }
 }

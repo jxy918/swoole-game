@@ -1,0 +1,51 @@
+#!/bin/bash
+function startgame()
+{
+	printf "staring GameServer...\r\n"
+    php run.php >> ../log/server.log 2>&1
+	printf $?
+    if [ $? == 0 ]; then
+        printf "GameServer start OK\r\n"
+        return 0
+    else
+        printf "GameServer start FAIL\r\n"
+        return 1
+    fi
+}
+
+function stopgame()
+{
+    printf "stoping GameServer...\r\n"
+    $(ps -ef | grep "game" | grep -v "grep" | awk '{print $2 }' | xargs kill -9)
+	PROCESS_NUM2=$(ps -ef | grep "game" | grep -v "grep" | awk '{print $2 }' | wc -l)
+    if [ $PROCESS_NUM2 == 0 ]; then
+        printf "GameServer stop OK\r\n"
+        return 0
+    else
+        printf "GameServer stop FAIL\r\n"
+        return 1
+    fi
+}
+
+function reload()
+{
+	cmd=$(pidof game_master_Game_App_GameServer)
+    printf $cmd
+    kill -USR1 "$cmd"
+	printf "Reloaded is OK \r\n"
+}
+
+if [ $1 == "start" ]
+then   
+	stopgame
+	sleep 1
+	startgame
+elif [ $1 == "stop" ] 
+then
+    stopgame
+elif [ $1 == "reload" ] 
+then
+	reload
+else
+    printf "Please make sure the positon variable is start or stop.\r\n"
+fi 
