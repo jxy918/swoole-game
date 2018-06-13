@@ -6,21 +6,21 @@ namespace Game\Core;
  *
  */  
 abstract class BaseServer {
-	/**
-	 * 单例对象
-	 */         
-	private static  $_instance = null;
-    
-	/**
-	 * websocket服务器对象
-	 */              
-	protected $server = null;
+    /**
+     * 单例对象
+     */
+    private static  $_instance = null;
+
+    /**
+     * websocket服务器对象
+     */
+    protected $server = null;
 
     /**
      * 是否开启websocket监听
      * @var bool
      */
-	protected $is_open_tcp = false;
+    protected $is_open_tcp = false;
 
     /**
      * 是否开启http服务监听
@@ -63,86 +63,85 @@ abstract class BaseServer {
      */
     protected $tcp_port = GameConst::GM_PROTOCOL_TCP_PORT;
 
-	/**
-	 * ws服务器默认配置
-	 */         
-	protected $ws_config = array(
-		'dispatch_mode' => 3,
-		'open_length_check' => 1,
-		'package_length_type' => 'N',
-		'package_length_offset' => 0,
-		'package_body_offset' => 4,
+    /**
+     * ws服务器默认配置
+     */
+    protected $ws_config = array(
+        'dispatch_mode' => 3,
+        'open_length_check' => 1,
+        'package_length_type' => 'N',
+        'package_length_offset' => 0,
+        'package_body_offset' => 4,
 
-		'package_max_length' => 2097152, // 1024 * 1024 * 2,
-		'buffer_output_size' => 3145728, //1024 * 1024 * 3,
-		'pipe_buffer_size' => 33554432, // 1024 * 1024 * 32,		
-		
-		'heartbeat_check_interval' => 30,
-		'heartbeat_idle_time' => 60,
-		
-//		'open_cpu_affinity' => 1,
+        'package_max_length' => 2097152, // 1024 * 1024 * 2,
+        'buffer_output_size' => 3145728, //1024 * 1024 * 3,
+        'pipe_buffer_size' => 33554432, // 1024 * 1024 * 32,
 
-//		'reactor_num' => 32,//建议设置为CPU核数 x 2 新版会自动设置 cpu个数
-		'max_conn'=>2000,
-		'worker_num' => 2,
-		'task_worker_num' => 4,//生产环境请加大，建议1000
+        'heartbeat_check_interval' => 30,
+        'heartbeat_idle_time' => 60,
 
-		'max_request' => 0, //必须设置为0，否则会导致并发任务超时,don't change this number
-		'task_max_request' => 2000,
-		
-//		'daemonize'=>1, 
-//		'log_level' => 2, //swoole 日志级别 Info
-		'backlog' => 3000,
-		'log_file' => '../log/sw_server.log',//swoole 系统日志，任何代码内echo都会在这里输出
-//		'task_tmpdir' => '/dev/shm/swtask/',//task 投递内容过长时，会临时保存在这里，请将tmp设置使用内存
+        //'open_cpu_affinity' => 1,
+        //'reactor_num' => 32,//建议设置为CPU核数 x 2 新版会自动设置 cpu个数
+        'max_conn'=>2000,
+        'worker_num' => 2,
+        'task_worker_num' => 4,//生产环境请加大，建议1000
 
-//		'document_root' => '/data/web/test/myswoole/poker/client',
-//		'enable_static_handler' => true,
-	);
+        'max_request' => 0, //必须设置为0，否则会导致并发任务超时,don't change this number
+        'task_max_request' => 2000,
 
-	/**
-	 * tcp服务器设置
-	 */
-	protected $tcp_config = array();
+        //'daemonize'=>1,
+        //'log_level' => 2, //swoole 日志级别 Info
+        'backlog' => 3000,
+        'log_file' => '../log/sw_server.log',//swoole 系统日志，任何代码内echo都会在这里输出
+        //'task_tmpdir' => '/dev/shm/swtask/',//task 投递内容过长时，会临时保存在这里，请将tmp设置使用内存
+
+        //'document_root' => '/data/web/test/myswoole/poker/client',
+        //'enable_static_handler' => true,
+    );
+
+    /**
+     * tcp服务器设置
+     */
+    protected $tcp_config = array();
 
     /**
      * http服务器设置
      */
     protected $http_config = array();
 
-	/**
-	* 单例模式，防止对象被克隆
-	*/
-	private function __clone() {}
+    /**
+    * 单例模式，防止对象被克隆
+    */
+    private function __clone() {}
 
-	/**
-	* 单例模式，防止对象被克隆
-	*/
-	private function __construct() {}
+    /**
+    * 单例模式，防止对象被克隆
+    */
+    private function __construct() {}
 
-	/**
-	* 获取单例对象
-	* @param int uid 用户UID
-	* @param string token 用户Token
-	* @return object
-	*/
-	public static function getInstance() {
-		if (self::$_instance == null) {
-			self::$_instance = new static();           
-		}
-		return self::$_instance;
-	}
+    /**
+    * 获取单例对象
+    * @param int uid 用户UID
+    * @param string token 用户Token
+    * @return object
+    */
+    public static function getInstance() {
+        if (self::$_instance == null) {
+            self::$_instance = new static();
+        }
+        return self::$_instance;
+    }
 
     /**
      * 设置tcp的配置文件，默认不设置
      * @param array $config
      * @return null
      */
-	public function setTcpConf($config = array()) {
-	    if(!emtpy($config)) {
+    public function setTcpConf($config = array()) {
+        if(!emtpy($config)) {
             $this->tcp_config = $config;
         }
-	    return self::$_instance;
+        return self::$_instance;
     }
 
     /**
@@ -216,7 +215,7 @@ abstract class BaseServer {
      * 如果服务器有配置端口， 走配置端口
      * @param $config
      */
-	protected function initConfig($config = array()) {
+    protected function initConfig($config = array()) {
         //服务器设置
         if(!empty($config)) {
             //设置服务器参数
@@ -246,71 +245,71 @@ abstract class BaseServer {
         }
     }
 
-	/**
-	 * 附件服务器初始化，例如：such as swoole atomic table or buffer 可以放置swoole的计数器，table等
-	*/
-	abstract protected function init($serv);
+    /**
+     * 附件服务器初始化，例如：such as swoole atomic table or buffer 可以放置swoole的计数器，table等
+    */
+    abstract protected function init($serv);
 
-	/**
-	 * WorkerStart时候可以调用， //require_once() 你要加载的处理方法函数等 what's you want load (such as framework init)
-	 * 比如需要动态加载的东西，可以做到无缝重启逻辑
-	*/
-	abstract protected function initReload($server, $worker_id);
+    /**
+     * WorkerStart时候可以调用， //require_once() 你要加载的处理方法函数等 what's you want load (such as framework init)
+     * 比如需要动态加载的东西，可以做到无缝重启逻辑
+    */
+    abstract protected function initReload($server, $worker_id);
 
-	/**
+    /**
      * 服务器启动
-     */         
-	public function start() {
-		$this->server->start();
-	}
-	
-	//服务开始回调
-	public function onStart($serv) {
-		swoole_set_process_name(GameConst::GM_PROCESS_NAME_PREFIX."_master_".$this->getClassNanme());
+     */
+    public function start() {
+        $this->server->start();
+    }
+
+    //服务开始回调
+    public function onStart($serv) {
+        swoole_set_process_name(GameConst::GM_PROCESS_NAME_PREFIX."_master_".$this->getClassNanme());
         Log::show("MasterPid={$serv->master_pid}");
         Log::show("ManagerPid={$serv->manager_pid}");
         Log::show("Server: start.Swoole version is [" . SWOOLE_VERSION . "]");
-	}
-	
-	//管理进程启动回调
-	public function onManagerStart($serv) {
+    }
+
+    //管理进程启动回调
+    public function onManagerStart($serv) {
         Log::show("onManagerStart:");
-		swoole_set_process_name(GameConst::GM_PROCESS_NAME_PREFIX."_manager_".$this->getClassNanme());
-	}
-	
-	//管理进程关闭回调
-	public function onManagerStop($serv) {
+        swoole_set_process_name(GameConst::GM_PROCESS_NAME_PREFIX."_manager_".$this->getClassNanme());
+    }
+
+    //管理进程关闭回调
+    public function onManagerStop($serv) {
         Log::show("onManagerStop:");
-		$serv->shutdown();
-	}
-	
-	//ws连接回调
-	public function onOpen($serv, $frame) {
+        $serv->shutdown();
+    }
+
+    //ws连接回调
+    public function onOpen($serv, $frame) {
         Log::show("onOpen connection open: ".$frame->fd);
-	}
-	
-	//tcp连接回调
-	public function onConnect($serv, $fd) {
+    }
+
+    //tcp连接回调
+    public function onConnect($serv, $fd) {
         Log::show("onConnect: connected...");
-	}
-	
-	//ws投递任务
-	public function onMessage($serv, $frame) {
+    }
+
+    //ws投递任务
+    public function onMessage($serv, $frame) {
         Log::show("Message: Start");
-		$send['protocol'] = GameConst::GM_PROTOCOL_WEBSOCK;
-		$send['data'] = $frame->data;
-		$send['fd'] = $frame->fd;
-		$this->server->task($send, -1, function ($serv, $task_id, $data) use ($frame) {
-			if(!empty($data)) {
-				$serv->push($frame->fd, $data, WEBSOCKET_OPCODE_BINARY);
-			}				
-		});
-	}
-	
-	//http投递任务
-	public function onRequest($request, $response) {
+        $send['protocol'] = GameConst::GM_PROTOCOL_WEBSOCK;
+        $send['data'] = $frame->data;
+        $send['fd'] = $frame->fd;
+        $this->server->task($send, -1, function ($serv, $task_id, $data) use ($frame) {
+            if(!empty($data)) {
+                $serv->push($frame->fd, $data, WEBSOCKET_OPCODE_BINARY);
+            }
+        });
+    }
+
+    //http投递任务
+    public function onRequest($request, $response) {
         Log::show("Request: Start");
-		$send['protocol'] = GameConst::GM_PROTOCOL_HTTP;
+        $send['protocol'] = GameConst::GM_PROTOCOL_HTTP;
         $send['data'] = $request->server;
         $send['fd'] = $request->fd;
         $this->server->task($send, -1, function ($serv, $task_id, $data) use ($response) {
@@ -318,58 +317,58 @@ abstract class BaseServer {
                 $response->end($data);
             }
         });
-	}
-	
-	//tcp投递任务
-	public function onReceive($serv, $fd, $from_id, $data) {
+    }
+
+    //tcp投递任务
+    public function onReceive($serv, $fd, $from_id, $data) {
         Log::show("onReceive: start");
-		$send['protocol'] = GameConst::GM_PROTOCOL_TCP;
-		$send['data'] = $data;
-		$send['fd'] = $fd;
-		$this->server->task($send, -1, function ($serv, $task_id, $data) use ($fd) {
-			if(!empty($data)) {
-				$serv->send($fd, $data);
-			}				
-		});
-	}
-	
-	//worker进程开启回调
-	public function onWorkerStart($server, $worker_id) {
-		$istask = $server->taskworker;
+        $send['protocol'] = GameConst::GM_PROTOCOL_TCP;
+        $send['data'] = $data;
+        $send['fd'] = $fd;
+        $this->server->task($send, -1, function ($serv, $task_id, $data) use ($fd) {
+            if(!empty($data)) {
+                $serv->send($fd, $data);
+            }
+        });
+    }
+
+    //worker进程开启回调
+    public function onWorkerStart($server, $worker_id) {
+        $istask = $server->taskworker;
         Log::show("onWorkerStart:");
         if ($istask) {
-			$this->initReload($server, $worker_id);
-			swoole_set_process_name(GameConst::GM_PROCESS_NAME_PREFIX."_task{$worker_id}_".$this->getClassNanme());
+            $this->initReload($server, $worker_id);
+            swoole_set_process_name(GameConst::GM_PROCESS_NAME_PREFIX."_task{$worker_id}_".$this->getClassNanme());
             Log::show("Task work_id is {$worker_id}");
         } else {
-			swoole_set_process_name(GameConst::GM_PROCESS_NAME_PREFIX."_worker{$worker_id}_".$this->getClassNanme());
+            swoole_set_process_name(GameConst::GM_PROCESS_NAME_PREFIX."_worker{$worker_id}_".$this->getClassNanme());
             Log::show("Worker work_id is {$worker_id}");
-		}
-	}
-	
-	//worker进程错误回调
-	public function onWorkerError($server, $worker_id, $worker_pid, $exit_code) {
+        }
+    }
+
+    //worker进程错误回调
+    public function onWorkerError($server, $worker_id, $worker_pid, $exit_code) {
         Log::show("onWorkerError: worker_id={$worker_id}  worker_pid={$worker_pid}  exit_code={$exit_code}");
-	}
-	
-	//任务进程回调
-	public function onTask($serv, $task_id, $src_worker_id, $data) {
-		$data = $this->doWork($serv, $task_id, $src_worker_id, $data);
+    }
+
+    //任务进程回调
+    public function onTask($serv, $task_id, $src_worker_id, $data) {
+        $data = $this->doWork($serv, $task_id, $src_worker_id, $data);
         Log::show("onTask: task_id={$task_id}	woker_id={$src_worker_id}");
-		return $data;
-	}
-	
-	//任务结束后回调处理， 高版本可以自定会回调函数
-	public function onFinish($serv, $task_id, $data) {
+        return $data;
+    }
+
+    //任务结束后回调处理， 高版本可以自定会回调函数
+    public function onFinish($serv, $task_id, $data) {
         Log::show("onFinish");
-	}
-	
-	//服务器关闭回调
-	public function onClose($serv, $fd) {
+    }
+
+    //服务器关闭回调
+    public function onClose($serv, $fd) {
         Log::show("onClose connection close: {$fd}");
-	}
-	
-	public function __destruct() {
+    }
+
+    public function __destruct() {
         Log::show('Server Was Shutdown...');
         $this->server->shutdown();
     }
@@ -421,7 +420,6 @@ abstract class BaseServer {
      * @return array
      */
     public function websockWork($serv, $task_id, $src_worker_id, $from_data) {
-        $back = array();
         $data = Packet::packDecode($from_data['data']);
         if(isset($data['code']) && $data['code'] == 0 && isset($data['msg']) && $data['msg'] == 'OK') {
             Log::show('Recv <<<  cmd='.$data['cmd'].'  scmd='.$data['scmd'].'  len='.$data['len'].'  data='.json_encode($data['data']));
@@ -447,12 +445,11 @@ abstract class BaseServer {
      * @return array
      */
     public function tcpWork($serv, $task_id, $src_worker_id, $from_data) {
-        $back = array();
         $data = Packet::packDecode($from_data['data'], 'protobuf');
         if(isset($data['code']) && $data['code'] == 0 && isset($data['msg']) && $data['msg'] == 'OK') {
             Log::show('Recv <<<  cmd='.$data['cmd'].'  scmd='.$data['scmd'].'  len='.$data['len'].'  data='.json_encode($data['data']));
             //转发请求，代理模式处理,websocket路由到相关逻辑
-            //$data['serv'] = $serv;
+            $data['serv'] = $serv;
             $data['protocol'] = GameConst::GM_PROTOCOL_TCP;
             $back = $this->dispatch($data);
             Log::show('Tcp Strategy <<<  data='.$back, GameConst::GM_LOG_LEVEL_DEBUG);
