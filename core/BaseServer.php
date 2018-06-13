@@ -28,10 +28,45 @@ abstract class BaseServer {
      */
     protected $is_open_http = false;
 
+    /**
+     * ws服务器ip
+     * @var string
+     */
+    protected $ws_ip = GameConst::GM_SERVER_IP;
+
+    /**
+     * ws服务器端口
+     * @var int
+     */
+    protected $ws_port = GameConst::GM_PROTOCOL_WEBSOCK_PORT;
+
+    /**
+     * http服务器ip
+     * @var string
+     */
+    protected $http_ip = GameConst::GM_SERVER_IP;
+    /**
+     * http服务器端口
+     * @var int
+     */
+    protected $http_port = GameConst::GM_PROTOCOL_HTTP_PORT;
+
+    /**
+     * tcp服务器ip
+     * @var string
+     */
+    protected $tcp_ip = GameConst::GM_SERVER_IP;
+
+    /**
+     * tcp服务器端口
+     * @var int
+     */
+    protected $tcp_port = GameConst::GM_PROTOCOL_TCP_PORT;
+
 	/**
-	 * 服务器默认配置
+	 * ws服务器默认配置
 	 */         
-	protected $config = array(
+	protected $ws_config = array(
 		'dispatch_mode' => 3,
 		'open_length_check' => 1,
 		'package_length_type' => 'N',
@@ -104,7 +139,9 @@ abstract class BaseServer {
      * @return null
      */
 	public function setTcpConf($config = array()) {
-	    $this->tcp_config = $config;
+	    if(!emtpy($config)) {
+            $this->tcp_config = $config;
+        }
 	    return self::$_instance;
     }
 
@@ -114,7 +151,9 @@ abstract class BaseServer {
      * @return null
      */
     public function setHttpConf($config = array()) {
-        $this->http_config = $config;
+        if(!empty($config)) {
+            $this->http_config = $config;
+        }
         return self::$_instance;
     }
 
@@ -124,26 +163,33 @@ abstract class BaseServer {
      * @return null
      */
     public function setWebsockConf($config = array()) {
-        $this->config = $config;
+        if(!empty($config)) {
+            $this->config = $config;
+        }
         return self::$_instance;
     }
 
 	/**
-	 * 初始化服务器
+	 * 初始化服务器，需要支持ssl，自行修改一下
 	 */              
-	public function initServer() {
+	public function initServer($config = array()) {
+        $this->initConfig($config);
 		//开启websocket服务器
-		$this->server = new \Swoole\Websocket\Server(GameConst::GM_SERVER_IP, GameConst::GM_PROTOCOL_WEBSOCK_PORT);
-        $this->server->set($this->config);
+		$this->server = new \Swoole\Websocket\Server($this->ws_ip, $this->ws_port);
+        $this->server->set($this->ws_config);
         //如果http端口有设置， 将开启http协议
         if($this->is_open_http) {
             //http server
-            $httpserver = $this->server->listen(GameConst::GM_SERVER_IP, GameConst::GM_PROTOCOL_HTTP_PORT, SWOOLE_SOCK_TCP);
+            $httpserver = $this->server->listen($this->http_ip, $this->http_port, SWOOLE_SOCK_TCP);
+            if(!empty($this->http_config)) {
+                $httpserver->set($this->http_config);
+            }
         }
+
 		//如果tcp端口有设置， 将开启tcp协议
 		if($this->is_open_tcp) {
 			//tcp server
-			$tcpserver = $this->server->listen(GameConst::GM_SERVER_IP, GameConst::GM_PROTOCOL_TCP_PORT, SWOOLE_SOCK_TCP);
+			$tcpserver = $this->server->listen($this->tcp_ip, $this->tcp_port, SWOOLE_SOCK_TCP);
             $tcpserver->on('Receive', array($this, 'onReceive'));
             $tcpserver->set($this->tcp_config);
 		}
@@ -165,6 +211,40 @@ abstract class BaseServer {
 		$this->init($this->server);
 		return self::$_instance;
 	}
+
+    /**
+     * 如果服务器有配置端口， 走配置端口
+     * @param $config
+     */
+	protected function initConfig($config = array()) {
+        //服务器设置
+        if(!empty($config)) {
+            //设置服务器参数
+            foreach($config as $k=>$v) {
+                if(isset($v['port']['socket_type']) && $v['port']['socket_type'] == GameConst::GM_PROTOCOL_WEBSOCK) {
+                    //设置websocket
+                    if(isset($v['port']['socket_name'])) $this->ws_ip = $v['port']['socket_name'];
+                    if(isset($v['port']['socket_port'])) $this->ws_port = $v['port']['socket_port'];
+                    //设置配置
+                    if(isset($v['set'])) $this->ws_config = $v['set'];
+                } elseif(isset($v['port']['socket_type']) && $v['port']['socket_type'] == GameConst::GM_PROTOCOL_HTTP) {
+                    //设置http
+                    if(isset($v['port']['socket_name'])) $this->http_ip = $v['port']['socket_name'];
+                    if(isset($v['port']['socket_port'])) $this->http_port = $v['port']['socket_port'];
+                    //设置配置
+                    if(isset($v['set'])) $this->http_config = $v['set'];
+                    $this->is_open_http = true;
+                } elseif(isset($v['port']['socket_type']) && $v['port']['socket_type'] == GameConst::GM_PROTOCOL_TCP) {
+                    //设置tcp
+                    if(isset($v['port']['socket_name'])) $this->tcp_ip = $v['port']['socket_name'];
+                    if(isset($v['port']['socket_port'])) $this->tcp_port = $v['port']['socket_port'];
+                    //设置配置
+                    if(isset($v['set'])) $this->tcp_config = $v['set'];
+                    $this->is_open_tcp = true;
+                }
+            }
+        }
+    }
 
 	/**
 	 * 附件服务器初始化，例如：such as swoole atomic table or buffer 可以放置swoole的计数器，table等
