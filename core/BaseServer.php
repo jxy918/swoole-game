@@ -169,13 +169,13 @@ abstract class BaseServer {
         return self::$_instance;
     }
 
-	/**
-	 * 初始化服务器，需要支持ssl，自行修改一下
-	 */              
-	public function initServer($config = array()) {
+    /**
+     * 初始化服务器，需要支持ssl，自行修改一下
+     */
+    public function initServer($config = array()) {
         $this->initConfig($config);
-		//开启websocket服务器
-		$this->server = new \Swoole\Websocket\Server($this->ws_ip, $this->ws_port);
+        //开启websocket服务器
+        $this->server = new \Swoole\Websocket\Server($this->ws_ip, $this->ws_port);
         $this->server->set($this->ws_config);
         //如果http端口有设置， 将开启http协议
         if($this->is_open_http) {
@@ -186,31 +186,31 @@ abstract class BaseServer {
             }
         }
 
-		//如果tcp端口有设置， 将开启tcp协议
-		if($this->is_open_tcp) {
-			//tcp server
-			$tcpserver = $this->server->listen($this->tcp_ip, $this->tcp_port, SWOOLE_SOCK_TCP);
+        //如果tcp端口有设置， 将开启tcp协议
+        if($this->is_open_tcp) {
+            //tcp server
+            $tcpserver = $this->server->listen($this->tcp_ip, $this->tcp_port, SWOOLE_SOCK_TCP);
             $tcpserver->on('Receive', array($this, 'onReceive'));
             $tcpserver->set($this->tcp_config);
-		}
+        }
 
-		//init websocket server
-		$this->server->on('Start', array($this, 'onStart'));
-		$this->server->on('ManagerStart', array($this, 'onManagerStart'));
-		$this->server->on('ManagerStop', array($this, 'onManagerStop'));
-		//websocket服务器
-		$this->server->on('Open', array($this, 'onOpen'));
-		$this->server->on('Message', array($this, 'onMessage'));
+        //init websocket server
+        $this->server->on('Start', array($this, 'onStart'));
+        $this->server->on('ManagerStart', array($this, 'onManagerStart'));
+        $this->server->on('ManagerStop', array($this, 'onManagerStop'));
+        //websocket服务器
+        $this->server->on('Open', array($this, 'onOpen'));
+        $this->server->on('Message', array($this, 'onMessage'));
         //http服务器只使用这个事件
         $this->server->on('Request', array($this, 'onRequest'));
-		$this->server->on('WorkerStart', array($this, 'onWorkerStart'));
-		$this->server->on('WorkerError', array($this, 'onWorkerError'));
-		$this->server->on('Task', array($this, 'onTask'));
-		$this->server->on('Finish', array($this, 'onFinish'));
-		$this->server->on('Close', array($this, 'onClose'));
-		$this->init($this->server);
-		return self::$_instance;
-	}
+        $this->server->on('WorkerStart', array($this, 'onWorkerStart'));
+        $this->server->on('WorkerError', array($this, 'onWorkerError'));
+        $this->server->on('Task', array($this, 'onTask'));
+        $this->server->on('Finish', array($this, 'onFinish'));
+        $this->server->on('Close', array($this, 'onClose'));
+        $this->init($this->server);
+        return self::$_instance;
+    }
 
     /**
      * 如果服务器有配置端口， 走配置端口
