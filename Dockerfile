@@ -96,7 +96,7 @@ RUN apt-get update && apt-get install -y \
 	&& echo extension=swoole.so>swoole.ini \
 	&& echo extension=msgpack.so>msgpack.ini \
 	&& echo extension=ds.so>ds.ini \
-	&& echo extension=protobuf.so>ds.ini \
+	&& echo extension=protobuf.so>protobuf.ini \
 	#添加系统配置，例如php.ini,opcache-recommended.ini
 	&& echo memory_limit = 1024 >> php.ini \ 
 	&& echo Mdata.timezone = "Asia/Shanghai" >> php.ini \

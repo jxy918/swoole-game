@@ -37,7 +37,7 @@ function reload()
 
 if [ $1 == "start" ]
 then   
-	stopgame
+	#stopgame
 	sleep 1
 	startgame
 elif [ $1 == "stop" ] 
