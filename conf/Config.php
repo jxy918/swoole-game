@@ -52,26 +52,26 @@ class Config {
 //		            'enable_static_handler' => true,
                 )
             ),
-            array(
-                'port'=>array(
-                    'socket_type' => GameConst::GM_PROTOCOL_TCP,
-                    'socket_name' => GameConst::GM_SERVER_IP,
-                    'socket_port' => GameConst::GM_PROTOCOL_TCP_PORT,
-                ),
-                'set'=>array(
-
-                ),
-            ),
-            array(
-                'port'=>array(
-                    'socket_type' => GameConst::GM_PROTOCOL_HTTP,
-                    'socket_name' => GameConst::GM_SERVER_IP,
-                    'socket_port' => GameConst::GM_PROTOCOL_HTTP_PORT,
-                ),
-                'set'=>array(
-
-                ),
-            ),
+//            array(
+//                'port'=>array(
+//                    'socket_type' => GameConst::GM_PROTOCOL_TCP,
+//                    'socket_name' => GameConst::GM_SERVER_IP,
+//                    'socket_port' => GameConst::GM_PROTOCOL_TCP_PORT,
+//                ),
+//                'set'=>array(
+//
+//                ),
+//            ),
+//            array(
+//                'port'=>array(
+//                    'socket_type' => GameConst::GM_PROTOCOL_HTTP,
+//                    'socket_name' => GameConst::GM_SERVER_IP,
+//                    'socket_port' => GameConst::GM_PROTOCOL_HTTP_PORT,
+//                ),
+//                'set'=>array(
+//
+//                ),
+//            ),
         );
         return $config;
     }

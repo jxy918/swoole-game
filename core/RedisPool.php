@@ -1,6 +1,11 @@
 <?php
 namespace Game\Core;
 
+/**
+ * redis
+ * Class RedisPool
+ * @package Game\Core
+ */
 class RedisPool {
     protected $pool;
 	protected $conf;

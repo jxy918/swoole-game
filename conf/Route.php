@@ -38,6 +38,7 @@ class Route {
      * @var array
      */
     public static $http_map = array(
-        'HttpTest'
+        'HttpTest',
+		'HttpTestIndex'
     );
 }                                                                                                       ;
