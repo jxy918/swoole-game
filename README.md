@@ -1,7 +1,7 @@
 # swoole-game
 
 * 基于Swoole扩展开游戏服务器框架
-* ### 基于swoft框架实现的版本：**[swoft-game](https://github.com/jxy918/swoft-game)**
+* 基于swoft框架实现的另一版本：**[swoft-game](https://github.com/jxy918/swoft-game)**
 
 ### 一，概述
 
@@ -78,8 +78,7 @@ php run.php
 * 3如果开启http服务器，其实websocket和http是同时开启的， 如果不想混在一起可以单独开启监听端口，http测试例子代码如下浏览器访问：
 
 ```
-http://192.168.7.197:9503/HttpTest?aaa=bbb&ccc=ddd
-http://192.168.7.197:9501/HttpTest?aaa=bbb&ccc=ddd
+http://[ip]:[port]/HttpTest?aaa=bbb&ccc=ddd
 
 ```
 
@@ -99,7 +98,7 @@ php tcp_client.php
 
 ### 七，备注
 
-* 根目录增加docker运行环境(Dockerfile)， 可以直接直接执行下面的命令，创建镜像php_swoole, 环境增加php-protobuf支持 
+* 根目录增加docker运行环境(Dockerfile)， 可以直接执行下面的命令，创建镜像php_swoole, 环境增加php-protobuf支持 
 
 ```
 docker build -t php_swoole .
