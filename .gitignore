@@ -1,0 +1,4 @@
+.git/
+log/
+vendor/
+*.lock
