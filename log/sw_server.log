@@ -1,0 +1,20 @@
+[2018-10-08 18:17:28 @2971.0]	TRACE	hb timer start, time: 30 live time:60
+[2018-10-08 18:17:28 #2971.1]	TRACE	check fd=5
+[2018-10-08 18:17:29 *2980.1]	DEBUG	Context(:16): alloc stack: size=2097152, ptr=0x7f19edb2b010.
+[2018-10-08 18:17:29 *2979.0]	DEBUG	Context(:16): alloc stack: size=2097152, ptr=0x7f19ed82a010.
+[2018-10-08 18:17:29 *2979.0]	DEBUG	~Context(:38): free stack: ptr=0x7f19ed82a010
+[2018-10-08 18:17:29 *2980.1]	DEBUG	~Context(:38): free stack: ptr=0x7f19edb2b010
+[2018-10-08 18:17:58 #2971.1]	TRACE	check fd=5
+[2018-10-08 18:18:28 #2971.1]	TRACE	check fd=5
+[2018-10-08 18:18:58 #2971.1]	TRACE	check fd=5
+[2018-10-08 18:19:28 #2971.1]	TRACE	check fd=5
+[2018-10-08 18:19:58 #2971.1]	TRACE	check fd=5
+[2018-10-08 18:20:28 #2971.1]	TRACE	check fd=5
+[2018-10-08 18:20:58 #2971.1]	TRACE	check fd=5
+[2018-10-08 18:21:09 @2984.0]	TRACE	hb timer start, time: 30 live time:60
+[2018-10-08 18:21:09 #2984.1]	TRACE	check fd=5
+[2018-10-08 18:21:10 *2992.0]	DEBUG	Context(:16): alloc stack: size=2097152, ptr=0x7f869222a010.
+[2018-10-08 18:21:10 *2992.0]	DEBUG	~Context(:38): free stack: ptr=0x7f869222a010
+[2018-10-08 18:21:10 *2993.1]	DEBUG	Context(:16): alloc stack: size=2097152, ptr=0x7f869252b010.
+[2018-10-08 18:21:10 *2993.1]	DEBUG	~Context(:38): free stack: ptr=0x7f869252b010
+[2018-10-08 18:21:39 #2984.1]	TRACE	check fd=5
