@@ -18,3 +18,21 @@
 [2018-10-08 18:21:10 *2993.1]	DEBUG	Context(:16): alloc stack: size=2097152, ptr=0x7f869252b010.
 [2018-10-08 18:21:10 *2993.1]	DEBUG	~Context(:38): free stack: ptr=0x7f869252b010
 [2018-10-08 18:21:39 #2984.1]	TRACE	check fd=5
+[2019-01-11 10:08:26 #5124.0]	NOTICE	swReactorThread_send (ERROR 1005): send event$[4] failed, session#3 does not exist.
+[2019-01-11 10:08:26 #5124.0]	NOTICE	swReactorThread_send (ERROR 1005): send event$[4] failed, session#5 does not exist.
+[2019-01-11 10:08:26 #5124.0]	NOTICE	swReactorThread_send (ERROR 1005): send event$[4] failed, session#7 does not exist.
+[2019-01-11 10:08:26 #5124.0]	NOTICE	swReactorThread_send (ERROR 1005): send event$[4] failed, session#2 does not exist.
+[2019-01-11 10:08:26 #5124.0]	NOTICE	swReactorThread_send (ERROR 1005): send event$[4] failed, session#4 does not exist.
+[2019-01-11 10:08:26 #5124.0]	NOTICE	swReactorThread_send (ERROR 1005): send event$[4] failed, session#6 does not exist.
+[2019-01-11 10:08:56 #5124.0]	NOTICE	swReactorThread_send (ERROR 1005): send event$[4] failed, session#10 does not exist.
+[2019-01-11 10:08:56 #5124.0]	NOTICE	swReactorThread_send (ERROR 1005): send event$[4] failed, session#12 does not exist.
+[2019-01-11 10:08:56 #5124.0]	NOTICE	swReactorThread_send (ERROR 1005): send event$[4] failed, session#9 does not exist.
+[2019-01-11 10:08:56 #5124.0]	NOTICE	swReactorThread_send (ERROR 1005): send event$[4] failed, session#11 does not exist.
+[2019-01-11 10:08:56 #5124.0]	NOTICE	swReactorThread_send (ERROR 1005): send event$[4] failed, session#13 does not exist.
+[2019-01-11 10:09:26 #5124.0]	NOTICE	swReactorThread_send (ERROR 1005): send event$[4] failed, session#16 does not exist.
+[2019-01-11 10:09:26 #5124.0]	NOTICE	swReactorThread_send (ERROR 1005): send event$[4] failed, session#18 does not exist.
+[2019-01-11 10:09:26 #5124.0]	NOTICE	swReactorThread_send (ERROR 1005): send event$[4] failed, session#15 does not exist.
+[2019-01-11 10:09:26 #5124.0]	NOTICE	swReactorThread_send (ERROR 1005): send event$[4] failed, session#17 does not exist.
+[2019-01-11 10:09:26 #5124.0]	NOTICE	swReactorThread_send (ERROR 1005): send event$[4] failed, session#19 does not exist.
+[2019-01-11 10:10:15 *5145.1]	NOTICE	php_swoole_http_onReceive (ERROR 1005): connection[1] is closed.
+[2019-01-11 10:28:08 *5250.0]	NOTICE	php_swoole_http_onReceive (ERROR 1005): connection[2] is closed.

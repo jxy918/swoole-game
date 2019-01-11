@@ -266,9 +266,10 @@ abstract class BaseServer {
     //服务开始回调
     public function onStart($serv) {
         swoole_set_process_name(GameConst::GM_PROCESS_NAME_PREFIX."_master_".$this->getClassNanme());
-        Log::show("MasterPid={$serv->master_pid}");
-        Log::show("ManagerPid={$serv->manager_pid}");
-        Log::show("Server: start.Swoole version is [" . SWOOLE_VERSION . "]");
+        Log::show("************************************************************************************");
+        Log::show("* WS  |  HOST: \e[0;32m{$this->ws_ip}\e[0m, PORT:\e[0;32m{$this->ws_port}\e[0m, MODE:\e[0;32m{$this->ws_config['dispatch_mode']}\e[0m, WORKER:\e[0;32m{$this->ws_config['worker_num']}\e[0m, TASK:\e[0;32m{$this->ws_config['task_worker_num']}\e[0m");
+        Log::show("* MasterPid={$serv->master_pid}  |  ManagerPid={$serv->manager_pid}  |  Swoole version is [" . SWOOLE_VERSION . "]");
+        Log::show("************************************************************************************");
     }
 
     //管理进程启动回调
@@ -285,7 +286,9 @@ abstract class BaseServer {
 
     //ws连接回调
     public function onOpen($serv, $frame) {
-        Log::show("onOpen connection open: ".$frame->fd);
+        //获取客户端连接数
+        $stats = $serv->stats();
+        Log::show("onOpen connection open: #".$frame->fd."  connection_num:{$stats['connection_num']}，accept_count:{$stats['accept_count']}，close_count:{$stats['close_count']}");
     }
 
     //tcp连接回调
@@ -295,7 +298,7 @@ abstract class BaseServer {
 
     //ws投递任务
     public function onMessage($serv, $frame) {
-        Log::show("Message: Start");
+        Log::show("Message: Start ----------------------------------------------------------------------------------");
         $send['protocol'] = GameConst::GM_PROTOCOL_WEBSOCK;
         $send['data'] = $frame->data;
         $send['fd'] = $frame->fd;
