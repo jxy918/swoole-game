@@ -98,7 +98,7 @@ php tcp_client.php
 
 ### 六，联系方式
 
-* qq：251413215
+* qq：251413215, 加qq请输入验证消息：swoole-game
 
 ### 七，备注
 
