@@ -81,7 +81,11 @@
         //路由到处理地方                               
         var func = Route[cmd][scmd];
         if(func) { 
-            eval("Resp."+func+"(data)");
+			try  {
+                eval("Resp."+func+"(data)");
+            } catch(exception) {
+                document.getElementById('msgText').innerHTML  += func+':'+JSON.stringify(data) + '\n';
+            }
         } else {
             this.log('func is valid'); 
         }
