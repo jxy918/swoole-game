@@ -1,8 +1,9 @@
 # swoole-game
 
 * 基于Swoole扩展开游戏服务器框架
+* 框架打包后使用方法请关注：**[swoole-game-framework](https://github.com/jxy918/swoole-game-framework)**
 * 基于swoft框架实现的另一版本：**[swoft-game](https://github.com/jxy918/swoft-game)**
-* 框架打包后使用方法请关注：**[swoft-game-framework](https://github.com/jxy918/swoole-game-framework)**
+* 想关主游戏开发可以关注swoft-ddz斗地主：**[swoft-ddz](https://github.com/jxy918/swoft-ddz)**
 
 ### 一，概述
 
